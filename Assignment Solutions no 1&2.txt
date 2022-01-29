@@ -1,0 +1,627 @@
+##########################################################################
+##  
+##  Prasad R. Bhosale       (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A1_1
+##
+##  A python program which contains one function named as Fun(). That function should display
+##  “Hello from Fun” on console.
+##
+##########################################################################
+def Fun():
+    print("Hello from fun")
+
+def main():
+    Fun()
+
+
+
+if __name__=="__main__":
+    main()
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale       (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A1_2
+##
+##  Write a program which contains one function named as ChkNum() which accept one
+##  parameter as number. If number is even then it should display “Even number” otherwise
+##  display “Odd number” on console.
+##########################################################################
+def ChkNum(number):
+    if(number%2==0):
+        print("Even Number ")
+    else:
+        print("Odd Number ")
+    
+    
+def main():
+    print("Enter number : ")
+    no = int(input())
+    ChkNum(no)
+    
+if __name__=="__main__":
+    main() 
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale       (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A1_3
+##
+##  Write a program which contains one function named as Add() which accepts two numbers
+##  from user and return addition of that two numbers.
+##
+##########################################################################
+
+def Add(value1,value2):
+    ans = value1+value2
+    return ans
+
+def main():
+    print("Enter first number :")
+    no1 = int(input())
+    print("Enter second number :")
+    no2 = int(input())
+    ret = Add(no1,no2)
+    
+    print("Addition is =",ret)
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale       (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A1_4
+##
+##  Write a program which display 5 times Marvellous on screen.
+##
+##########################################################################
+
+def Fun():
+    M = "Marvellous"
+    for i in range(5):
+        print(M)
+    
+
+def main():
+    Fun()
+
+if __name__=="__main__":
+    main()
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale       (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A1_5
+##
+##  Write a program which display 10 to 1 on screen.
+##
+##########################################################################
+
+def Fun():
+    for i in range(10,0,-1):
+        print(i)
+    
+def main():
+    Fun()
+    
+if __name__ =="__main__":
+    main()
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale       (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A1_6
+##
+##  Write a program which accept number from user and check whether that number is positive or
+##  negative or zero.
+##########################################################################
+
+def Fun(value):
+    if(value>0):
+        print("Number is positive ")
+    elif(value<0):
+        print("Number is negative ")
+    else:
+        print("Number is Zero ")
+    
+def main():
+    print("Enter number :")
+    no = int(input())
+    Fun(no)
+
+if __name__=="__main__":
+    main()
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale       (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A1_7
+##
+##  Write a program which contains one function that accept one number from user and returns
+##  true if number is divisible by 5 otherwise return false.
+##########################################################################
+
+def Fun(Value):
+    if(Value%5==0):
+        return True
+    else:
+        return False
+    
+def main():
+    print("Enter number : ")
+    no = int(input())
+    ret = Fun(no)
+    if(ret==True):
+        print("True")
+    else:
+        print("False")
+    
+if __name__=="__main__":
+    main()
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale       (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A1_8
+##
+##  Write a program which accept number from user and print that number of “*” on screen.
+## 
+##########################################################################
+
+def Fun(value):
+    for i in range(value):
+        print("*")
+    
+def main():
+    print("Enter number :")
+    no = int(input())
+    Fun(no)
+    
+if __name__=="__main__":
+    main()
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale       (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A1_9
+##
+##  Write a program which display first 10 even numbers on screen.
+## 
+##########################################################################
+
+def Fun():
+    for i in range(2,21,2):
+        print(i)
+    
+def main():
+    Fun()
+
+if __name__=="__main__":
+    main()
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale       (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A1_10
+##
+##  Write a program which accept name from user and display length of its name.
+## 
+##########################################################################
+
+def Fun(X):
+    return (len(X))
+    
+
+def main():
+    print("Enter name =")
+    data = str(input())
+    ret = Fun(data)
+    print("Length = ",ret)
+
+if __name__=="__main__":
+    main()
+
+
+
+
+##########################################################################
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale   (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A2_1
+##
+##  Write a program which accept name from user and display length of its name.
+## 
+##########################################################################
+
+import Arithmetic as A
+ 
+def main():
+    print("Enter first number =")
+    no1= int(input())
+    print("Enter second number =")
+    no2= int(input())
+    
+    ret = A.Addition(no1,no2)
+    print("Addition is = ",ret)
+    
+    ret = A.Subtration(no1,no2)
+    print("Subtraction is = ",ret)
+    
+    ret = A.Multiplication(no1,no2)
+    print("Multiplication is = ",ret)
+    
+    ret = A.Divide(no1,no2)
+    print("Dividation is = ",ret)
+
+if __name__=="__main__":
+    main()
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale   (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A2_2
+##
+##  Write a program which accept one number and display below pattern.
+## 
+##########################################################################
+
+def Fun(value):
+    for i in range(0,value):
+        for j in range(0,value):
+            print(" * ",end=" ")
+        print("\n")
+
+def main():
+    print("Enter number :")
+    no = int(input())
+    Fun(no)
+
+
+if __name__=="__main__":
+    main()
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A2_3
+##
+##  Write a program which accept one number from user and return its factorial.
+## 
+##########################################################################
+
+def Fact(Value):
+    ans =1
+    for i in range(1,Value+1):
+        ans = ans*i
+    return ans
+
+def main():
+    print("Enter number :")
+    no = int(input())
+    ret = Fact(no)
+    print("Factorial = ",ret)
+
+
+if __name__ =="__main__":
+    main()
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A2_4
+##
+##  Write a program which accept one number form user and return addition of its factors.
+## 
+##########################################################################
+
+def Addition(value):
+    ans = 0
+    fact = 0
+    for i in range(1,value):
+        if(value%i==0):
+            ans = ans+i
+    return ans
+
+    
+
+def main():
+    no = int(input("Enter Number :"))
+    ret = Addition(no)
+    print("Sum of factors = ",ret)
+
+if __name__=="__main__":
+    main()
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A2_5
+##
+##  Write a program which accept one number for user and check whether number is prime or not.
+## 
+##########################################################################
+
+def Prime(value):
+    for i in range(2,value):
+        if (value%i==0):
+            return False
+        else:
+            return True
+
+def main():
+    no = int(input("Enter number : "))
+    ret = Prime(no)
+    if(ret==True):
+        print(no,"is prime")
+    else:
+        print(no,"is NOT prime")
+
+if __name__=="__main__":
+    main()
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A2_6
+##
+##  Write a program which accept one number and display below pattern.
+#   * * * * *
+#   * * * *
+#   * * *
+#   * *
+#   *
+## 
+##########################################################################
+
+def Pattern(value):
+    for i in range(0,value):
+        for j in range(i,value):
+            print(" * ",end=" ")
+        print("\n")
+
+def main():
+    no = int(input("Enter number : "))
+    Pattern(no)
+
+if __name__=="__main__":
+    main()
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A2_7
+##
+##  Write a program which accept one number and display below pattern.
+#   1 2 3 4 5
+#   1 2 3 4 5
+#   1 2 3 4 5
+#   1 2 3 4 5
+#   1 2 3 4 5
+## 
+##########################################################################
+
+def Pattern(value):
+    for i in range(1,value+1):
+        for j in range(1,value+1):
+            print(j,end=" ")
+        print("\n")
+
+def main():
+    no = int(input("Enter the number : "))
+    Pattern(no)
+
+if __name__=="__main__":
+    main()
+    
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A2_8
+##
+##  Write a program which accept one number and display below pattern.
+#   1
+#   1 2
+#   1 2 3
+#   1 2 3 4
+#   1 2 3 4 5
+## 
+##########################################################################
+
+def Pattern(value):
+    for i in range(1,value+1):
+        for j in range(1,i+1):
+            print(j,end = " ")
+        print("\n")
+        
+
+def main():
+    no = int(input("Enter number : "))
+    Pattern(no)
+
+if __name__ =="__main__":
+    main()
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A2_9
+##
+##  Write a program which accept number from user and return number of digits in that number.
+## 
+##########################################################################
+
+def CountDigit(value):
+    ans = 0
+    while(value>0):
+        value = int (value/10)
+        ans = int(ans + 1) 
+    return ans
+
+def main():
+    no = int(input("Enter the number : "))
+    ret = CountDigit(no)
+    print("Total Digits = ",ret)
+
+if __name__=="__main__":
+    main()
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Sunday (19/12/2021)
+##  Assignment No.A2_10
+##
+##  Write a program which accept number from user and return addition of digits in that number.
+## 
+##########################################################################
+
+def Fun(value):
+    summ =int (0)
+    while(value>0):
+        reminder = value%10
+        value = value/10
+        summ = int (summ+reminder)
+    return summ 
+    
+
+def main():
+    no = int(input("Enter the number : "))
+    ret = Fun(no)
+    print("Addition of digits = ",ret)
+
+
+if __name__=="__main__":
+    main()
+    
+
+
+
+##########################################################################
+
+
+
+
+
+
+
+
+
+
+
+

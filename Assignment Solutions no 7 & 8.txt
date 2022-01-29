@@ -1,0 +1,485 @@
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Monday (17/01/2022)
+##  Assignment No.A7_1
+##
+## Write a recursive program which display below pattern.
+## Input : 5
+## Output : * * * * *
+##########################################################################
+i =0
+def Pattern(no):
+    global i 
+    if (i<no):
+        print(" * ",end= " ")
+        i +=1
+        Pattern(no)
+
+def main():
+    n = int(input("Enter number : "))
+    Pattern(n)    
+
+
+if __name__ =="__main__":
+    main()
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Monday (17/01/2022)
+##  Assignment No.A7_2
+##
+## Write a recursive program which display below pattern.
+## Input : 5
+## Output : 1 2 3 4 5
+##########################################################################
+i =1
+def Pattern(no):
+    global i 
+    if (i<=no):
+        print(" ",i,end= " ")
+        i +=1
+        Pattern(no)
+
+def main():
+    n = int(input("Enter number : "))
+    Pattern(n)    
+
+
+if __name__ =="__main__":
+    main()
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Monday (17/01/2022)
+##  Assignment No.A7_3
+##
+## Write a recursive program which display below pattern.
+## Input : 5
+## Output : 5 4 3 2 1
+##########################################################################
+
+def Pattern(no):
+    if(no>0):
+        print(" ",no, end=" ")
+        no -=1
+        Pattern(no)
+
+def main():
+    n = int(input("Enter number : "))
+    Pattern(n)
+
+if __name__=="__main__":
+    main()
+
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Monday (17/01/2022)
+##  Assignment No.A7_4
+##
+## Write a recursive program which accept number from user and return
+## summation of its digits.
+## Input : 879
+## Output : 24
+##########################################################################
+sumx = 0
+def Pattern(no): 
+    global sumx 
+    no = int (no)
+    if(no>0):
+        i = no%10
+        sumx = i + sumx
+        no = no/10
+        Pattern(no)
+    return(sumx)
+
+def main():
+    n = int(input("Enter number : "))
+    x = Pattern(n)
+    print("Sum is = ",x)
+
+if __name__=="__main__":
+    main()
+
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Monday (17/01/2022)
+##  Assignment No.A7_5
+##
+## Write a recursive program which accept number from user and return its
+## factorial.
+## Input : 5
+## Output : 120
+##########################################################################
+
+import math
+
+def Fact(no):
+    factorial = math.factorial(no)
+    print("Factorial = ",factorial)
+        
+
+def main():
+    n = int(input("Enter number : ")) 
+    Fact(n)
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+###################################################################################################
+##################################################################################################
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Tuesday (18/01/2022)
+##  Assignment No.A8_1
+##
+## Design python application which creates two thread named as even and odd. Even
+## thread will display first 10 even numbers and odd thread will display first 10 odd
+## numbers.
+##########################################################################
+
+import os
+import threading
+
+def Even():
+    print("Even Numbers with PID : ",os.getpid())
+    for i in range(2,21,2):
+        print("Even : ",i)
+
+    
+def Odd():
+    print("Odd Numbers with PID : ",os.getpid())
+    for i in range(1,20,2):
+        print("Odd : ",i)
+
+def main():
+    t1 = threading.Thread(target=Even,args=())
+    t2 = threading.Thread(target=Odd,args=())
+    
+    # starting thread 1
+    t1.start()
+    # starting thread 2
+    t2.start()
+    
+    
+    
+    # wait until thread 1 is completely executed
+    t1.join()
+    # wait until thread 2 is completely executed
+    t2.join()
+  
+    
+
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Tuesday (18/01/2022)
+##  Assignment No.A8_2
+##
+## Design python application which creates two threads as evenfactor and oddfactor.
+## Both the thread accept one parameter as integer. Evenfactor thread will display
+## addition of even factors of given number and oddfactor will display addition of odd
+## factors of given number. After execution of both the thread gets completed main
+## thread should display message as “exit from main”
+##########################################################################
+
+import os
+import threading
+
+def EvenFractor(no):
+    sumx = 0
+    for i in range(1,no,1):
+        if(no%i==0 and i%2==0):
+            sumx += i
+    print("Sum of Even Fractors : ",sumx)
+    
+def OddFractor(no):
+    sumx = 0
+    for i in range(1,no,1):
+        if(no%i==0 and i%2==1):
+            sumx += i
+    print("Sum of Odd Fractors : ",sumx)
+    
+
+def main():
+    n = int(input("Enter number : "))
+    t1 = threading.Thread(target=EvenFractor,args=(n,))
+    t2 = threading.Thread(target=OddFractor,args=(n,))
+    
+    # starting thread 1
+    t1.start()
+    # starting thread 2
+    t2.start()
+    
+    
+    
+    # wait until thread 1 is completely executed
+    t1.join()
+    # wait until thread 2 is completely executed
+    t2.join()
+  
+    print("Exit from main")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Tuesday (18/01/2022)
+##  Assignment No.A8_3
+##
+## Design python application which creates two threads as evenlist and oddlist. Both the
+## threads accept list of integers as parameter. Evenlist thread add all even elements
+## from input list and display the addition. Oddlist thread add all odd elements from input
+## list and display the addition.
+##########################################################################
+
+import os
+import threading
+
+def EvenList(x):
+    sumx = 0
+    for i in x:
+        if (i%2==0):
+            sumx += i
+    print("\nSum of Even Element :",sumx)
+    
+def OddList(x):
+    sumx = 0
+    for i in x:
+        if (i%2==1):
+            sumx += i
+    print("\nSum of Odd Element :",sumx)
+
+
+def main():
+    a = int(input("Enter size : \n"))
+    mylist =[]
+    for i in range(a):
+        n = int(input("Enter list : "))
+        mylist.append(n)
+        
+    t1 = threading.Thread(target=EvenList,args=(mylist,))
+    t2 = threading.Thread(target=OddList,args=(mylist,))
+    
+    # starting thread 1
+    t1.start()
+    # starting thread 2
+    t2.start()
+    
+    
+    
+    # wait until thread 1 is completely executed
+    t1.join()
+    # wait until thread 2 is completely executed
+    t2.join()
+  
+    print("Exit from main")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Wednesday (19/01/2022)
+##  Assignment No.A8_4
+##
+## Design python application which creates three threads as small, capital, digits. All the
+## threads accepts string as parameter. Small thread display number of small characters,
+## capital thread display number of capital characters and digits thread display number of
+## digits. Display id and name of each thread.
+##########################################################################
+
+import os
+import threading
+
+def small(x):
+    print("PID of small: ",os.getpid())
+    small_list = []
+    for i in x:
+        if(i.islower()):
+            small_list.append(i)
+    print("Small characters from list : ",small_list)
+    
+
+def capital(x):
+    print("PID of capital: ",os.getpid())
+    capital_list = []
+    for i in x:
+        if(i.isupper()):
+            capital_list.append(i)
+    print("Capital characters from list : ",capital_list)
+    
+
+def digit(x):
+    print("PID of digit: ",os.getpid())
+    digit_list = []
+    for i in x:
+        if(i.isdigit()):
+            digit_list.append(i)
+    print("Digits from list : ",digit_list)
+
+def main():
+    a = int(input("Enter size : \n"))
+    mylist =[]
+    for i in range(a):
+        n = (input("Enter list : "))
+        mylist.append(n)
+        
+    t1 = threading.Thread(target=small,args=(mylist,))
+    t2 = threading.Thread(target=capital,args=(mylist,))
+    t3 = threading.Thread(target=digit,args=(mylist,))
+    
+    # starting thread 1
+    t1.start()
+    # starting thread 2
+    t2.start()
+    # starting thread 3
+    t3.start()
+    
+    
+    
+    # wait until thread 1 is completely executed
+    t1.join()
+    # wait until thread 2 is completely executed
+    t2.join()
+    # wait until thread 3 is completely executed
+    t3.join()
+  
+    print("Exit from main")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Wednesday (19/01/2022)
+##  Assignment No.A8_5
+##
+## Design python application which contains two threads named as thread1 and thread2.
+## Thread1 display 1 to 50 on screen and thread2 display 50 to 1 in reverse order on
+## screen. After execution of thread1 gets completed then schedule thread2.
+##########################################################################
+
+import os
+import threading
+
+
+def t1():
+    for i in range(1,51):   
+        print("S : ",i)
+
+
+def t2():
+    for i in range(50,0,-1):
+        print("Reverse : ",i)
+    
+
+def main():
+    # a = int(input("Enter size : \n"))
+    # mylist =[]
+    # for i in range(a):
+    #     n = (input("Enter list : "))
+    #     mylist.append(n)
+        
+    thread1 = threading.Thread(target=t1,args=())
+    thread2 = threading.Thread(target=t2,args=())
+    
+    # starting thread 1
+    thread1.start()
+    # wait until thread 1 is completely executed
+    thread1.join()
+    
+    
+    # starting thread 2
+    thread2.start()
+    # wait until thread 2 is completely executed
+    thread2.join()
+  
+    print("Exit from main")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+###################################################################################################
+###################################################################################################
+###################################################################################################
+###################################################################################################

@@ -1,0 +1,442 @@
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Sunday (24/12/2021)
+##  Assignment No.A3_1
+##
+##  Write a program which accept N number from user and store it into List. Return addition of all elements from the List.
+## 
+
+##########################################################################
+def Fun(n,mylist):
+    mysum = 0
+    for i in range (0,n,1):
+        mysum = mysum + mylist[i]
+    return mysum  
+
+def main():
+    no = int(input("Enter number : "))
+    
+    mylist = []
+
+    for i in range(0,no,1):
+        ele = int(input())
+        
+        mylist.append(ele)       
+    
+    ret = Fun(no,mylist)
+    print("Addition of all elements of the list = ",ret)
+
+if __name__=="__main__":
+    main()
+
+
+
+
+
+	
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Sunday (24/12/2021)
+##  Assignment No.A3_2
+##
+##  Write a program which accept N number from user and store it into List. Return maximum number from that List.
+## 
+##########################################################################
+
+def Fun(n,mylist):
+    mymax = 0
+    for i in range(0,n,1):
+        if(mymax < (mylist[i])):
+            mymax = mylist[i]
+    return mymax
+    
+def main():
+    no = int(input("Enter the number of elements : "))
+    mylist = [] 
+    for i in range(0,no,1):
+        ele = int(input())
+        mylist.append(ele)    
+    
+    ret = Fun(no,mylist)
+    print("Maximum number of given list = ",ret)
+
+if __name__=="__main__":
+    main()
+
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Sunday (24/12/2021)
+##  Assignment No.A3_3
+##
+##  Write a program which accept N number from user and store it into List. Return minimum number from that List.
+## 
+##########################################################################
+
+def Fun(n,mylist):
+    mymin = mylist[0]
+    for i in range(1,n,1):
+        if(mymin>(mylist[i])):
+            mymin = mylist[i]
+    return mymin
+    
+def main():
+    no = int(input("Enter the number : "))
+    mylist = []
+    for i in range(0,no,1):
+        ele = int(input())
+        
+        mylist.append(ele)
+    ret = Fun(no,mylist)
+    print("Minimum number from the given list = ",ret)
+
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Sunday (24/12/2021)
+##  Assignment No.A3_4
+##
+##  Write a program which accept N number from user and store it into List. Accept one another number from 
+##  user and return frequency of that number from list.
+##########################################################################
+
+def Fun(n,sn,mylist):
+    cnt = 0
+    for i in range(0, n, 1):
+        if(sn==mylist[i]):
+            cnt +=1
+    return cnt
+    
+def main():
+    no = int(input("Enter the number : "))
+    Sno = int(input("Enter the Search element : "))
+    mylist = []
+    for i in range(0,no,1):
+        ele = int(input())
+        mylist.append(ele)
+        
+    ret = Fun(no,Sno,mylist)
+    print("Frequency of ",Sno," Number = ",ret)
+
+
+if __name__ =="__main__":
+    main()
+
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Sunday (24/12/2021)
+##  Assignment No.A3_5
+##
+##  Write a program which accept N number from user and store it into List. Return addition of all 
+##  prime numbers from that List. Main python file accepts n number from user and pass each number 
+##  to ChkPrime() function which is part of our user defined module named as 
+##  MarvellousNum. Name of the function from main python file should be ListPrime().
+##########################################################################
+import MarvellousNum as M
+
+def main():
+    no = int(input("Enter the number of elements : "))
+    mylist = []
+    for i in range(0,no,1):
+        ele = int(input())
+        mylist.append(ele)
+    ret =  M.ChkPrime(mylist)
+    print("Sum of prime elements = ",ret)
+    
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+###################################################################################################
+###################################################################################################
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Monday (04/01/2022)
+##  Assignment No.A4_1
+##
+##  write a program which contains one lambda function which accepts one parameter
+##  and return power of two.
+##########################################################################
+
+Power_of_two = lambda no:no*no
+
+
+def main():
+    n =int(input("Enter number : "))
+    ret = Power_of_two(n)
+    print("output = ",ret)
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Monday (04/01/2022)
+##  Assignment No.A4_2
+##
+##  write a program which contains one lambda function which accepts two parameters
+##  and return its multiplications.
+##########################################################################
+
+multi = lambda no1,no2 : no1*no2
+
+def main():
+    n1=int(input("Enter number 1 : "))
+    n2=int(input("Enter number 2 : ")) 
+    
+    ret = multi(n1,n2)
+    print("Output : ",ret)
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Monday (04/01/2022)
+##  Assignment No.A4_3
+##
+##  Write a program which contains filter(), map() and reduce() in it. Python application which
+##  contains one list of numbers. List contains the numbers which are accepted from user. Filter
+##  should filter out all such numbers which greater than or equal to 70 and less than or equal to
+##  90. Map function will increase each number by 10. Reduce will return product of all that
+##  numbers.
+##########################################################################
+from functools import reduce
+from typing import NewType
+        
+def CheckX(no):
+    if(no>=70 and no <=90):
+        return no
+# CheckX = lambda no : int(no>69 and no<91)
+
+IncData = lambda no : no+10
+
+ReduceX = lambda no1, no2 : no1 * no2 
+
+def main():
+    print("Enter data : ")
+    # data= []
+    # data = list(input())
+    data = [4,34,36,76,68,24,89,23,86,90,45,70]
+    data = (list(data))
+    #filter(Function, data)
+    NewData = list(filter(CheckX,data))
+    print("List after filter : ",NewData)
+    
+    #Map(Function, data)
+    MapData = list(map(IncData,NewData))
+    print("List after map: ",MapData)
+    
+    #reduce(Function, data)
+    Reduce_Data = reduce(ReduceX,MapData)    
+    print("Output : ",Reduce_Data)
+    
+    
+if __name__ =="__main__":
+    main()
+
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Monday (04/01/2022)
+##  Assignment No.A4_4
+##
+##  Write a program which contains filter(), map() and reduce() in it. Python application which
+##  contains one list of numbers. List contains the numbers which are accepted from user. Filter
+##  should filter out all such numbers which are even. Map function will calculate its square.
+##  Reduce will return addition of all that numbers
+##########################################################################
+from functools import reduce
+from typing import NewType
+        
+# def CheckX(no):
+#     if(no%2==0):
+#         return no
+
+CheckX = lambda no : (no%2==0)
+
+IncData = lambda no : no*no
+
+ReduceX = lambda no1, no2 : no1 + no2 
+
+def main():
+    print("Enter data : ")
+    # data= []
+    # data = list(input())
+    data = [5,2,3,4,3,4,1,2,8,10]
+    data = (list(data))
+    #filter(Function, data)
+    NewData = list(filter(CheckX,data))
+    print("List after filter : ",NewData)
+    
+    #Map(Function, data)
+    MapData = list(map(IncData,NewData))
+    print("List after map: ",MapData)
+    
+    #reduce(Function, data)
+    Reduce_Data = reduce(ReduceX,MapData)    
+    print("Output : ",Reduce_Data)
+    
+    
+if __name__ =="__main__":
+    main()
+
+
+
+
+
+
+
+##########################################################################
+##  
+##  Prasad R. Bhosale  (328M_Prasad)
+##  Monday (04/01/2022)
+##  Assignment No.A4_5
+##
+##  Write a program which contains filter(), map() and reduce() in it. Python application which
+##  contains one list of numbers. List contains the numbers which are accepted from user. Filter
+##  should filter out all prime numbers. Map function will multiply each number by 2. Reduce will
+##  return Maximum number from that numbers. (You can also use normal functions instead of
+##  lambda functions).
+##########################################################################
+from functools import reduce
+# from typing import NewType
+import MarvellousNum as M
+        
+# def MaxNo(n1,n2):
+#     if(n1>n2):
+#         return n1
+#     elif(n2>n1):
+#         return n2
+
+def ChkPrime(mylist):
+    print("##",type(mylist))
+    n = len(mylist)
+    n = int (n)
+    x= []
+    for i in range(0,n,1):
+        flag = False
+        for j in range(2,mylist[i],1):
+            if (mylist[i]%j==0):
+                flag = True 
+                break
+        if flag==False:
+            prime = mylist[i]
+            x= x.append(prime)
+                # print(":-",mylist[i]) 
+    return x
+# CheckX = lambda no : M.ChkPrime(no)
+# CheckX = ChkPrime(data)
+
+IncData = lambda no : no*2
+
+# ReduceX = lambda no1,no2 : MaxNo(no1,no2) 
+ReduceX = lambda no1,no2 : no1 if no1>no2 else no2
+    
+
+def main():
+    # print("Enter data : ")
+    # data= []
+    # data = list(input())
+    # data = int(list(5,2,3,4,3,4,1,2,8,10))
+    no = int(input("Enter Number : "))
+    data = []
+    for i in range(0,no,1):
+        ele = int(input())
+        data.append(ele)    
+    
+    #filter(Function, data)
+    print("@@  ",type(data))
+    # NewData = list(filter(CheckX,list(data)))
+    NewData = (ChkPrime(data))
+    print("List after filter : ",NewData)
+    
+    
+    #Map(Function, data)
+    MapData = list(map(IncData,NewData))
+    print("List after map: ",MapData)
+    
+    #reduce(Function, data)
+    Reduce_Data = reduce(ReduceX,MapData)    
+    print("Output : ",Reduce_Data)
+    
+    
+if __name__ =="__main__":
+    main()
+
+
+
+
+
+###################################################################################################
+###################################################################################################
+###################################################################################################
+###################################################################################################
+
+
+
+
+
+
+
+
